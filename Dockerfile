@@ -9,7 +9,7 @@ RUN flutter build web
 
 
 
-FROM nginx:stable-alpine
+FROM arm64v8/nginx:stable-alpine
 
 COPY --from=build /app/build/web /usr/share/nginx/html
 
