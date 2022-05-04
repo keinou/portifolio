@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karc_pf/constants.dart';
 
 class SplitView extends StatelessWidget {
   const SplitView({
@@ -16,6 +17,7 @@ class SplitView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    mobileDisplay = screenWidth >= breakpoint;
     if (screenWidth >= breakpoint) {
       // wide screen: menu on the left, content on the right
       return Row(
@@ -31,7 +33,7 @@ class SplitView extends StatelessWidget {
     } else {
       // narrow screen: show content, menu inside drawer
       return Scaffold(
-        body: content,
+        body: Padding(padding: const EdgeInsets.all(8), child: content),
         drawer: SizedBox(
           width: menuWidth,
           child: Drawer(

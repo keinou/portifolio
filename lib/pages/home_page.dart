@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:karc_pf/constants.dart';
 import 'package:karc_pf/widgets/page_scaffold.dart';
 
@@ -13,17 +14,19 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RichText(
-                text: const TextSpan(
-              text: 'Hi,',
-              style: TextStyle(color: Colors.white, fontSize: 70),
-            )),
+              text: TextSpan(
+                text: 'Hi,',
+                style: TextStyle(color: Colors.white, fontSize: 70.sp),
+              ),
+              maxLines: 1,
+            ),
             RichText(
                 text: TextSpan(
                     text: 'I\'m ',
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontFamily: 'Hasklig',
                         color: Colors.white,
-                        fontSize: 70),
+                        fontSize: 70.sp),
                     children: [
                   TextSpan(text: "R", style: TextStyle(color: primaryColor)),
                   const TextSpan(text: "afael "),

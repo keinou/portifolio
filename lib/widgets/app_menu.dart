@@ -105,7 +105,8 @@ class AppMenu extends ConsumerWidget {
                           )),
                       IconButton(
                           onPressed: () {
-                            _launchUrl("https://github.com/keinou/");
+                            _launchUrl(
+                                "https://www.linkedin.com/in/karczevski/");
                           },
                           icon: const Icon(FlutterRemix.linkedin_fill,
                               color: Colors.grey)),

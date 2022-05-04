@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:karc_pf/constants.dart';
 import 'package:karc_pf/widgets/button_menu.dart';
 import 'package:karc_pf/widgets/page_scaffold.dart';
@@ -27,10 +28,10 @@ class ContactPage extends StatelessWidget {
                   RichText(
                       text: TextSpan(
                           text: '',
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontFamily: 'Hasklig',
                               color: Colors.white,
-                              fontSize: 70),
+                              fontSize: 70.sp),
                           children: [
                         TextSpan(
                             text: "C", style: TextStyle(color: primaryColor)),
@@ -47,7 +48,8 @@ class ContactPage extends StatelessWidget {
                     height: 20,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width / 2.6,
+                    width: MediaQuery.of(context).size.width /
+                        (mobileDisplay ? 2.6 : 1),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -79,7 +81,8 @@ class ContactPage extends StatelessWidget {
                     height: 20,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width / 2.6,
+                    width: MediaQuery.of(context).size.width /
+                        (mobileDisplay ? 2.6 : 1),
                     child: TextField(
                       controller: _subject,
                       decoration: const InputDecoration(
@@ -92,7 +95,8 @@ class ContactPage extends StatelessWidget {
                     height: 20,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width / 2.6,
+                    width: MediaQuery.of(context).size.width /
+                        (mobileDisplay ? 2.6 : 1),
                     child: TextField(
                       controller: _message,
                       maxLines: 5,
@@ -149,7 +153,7 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(flex: 2, child: Container())
+            mobileDisplay ? Expanded(flex: 2, child: Container()) : Container()
           ],
         ));
   }

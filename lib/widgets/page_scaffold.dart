@@ -30,7 +30,9 @@ class PageScaffold extends StatelessWidget {
                           : null,
                     )
                   : null,
-              title: Text(title),
+              // title: Text(title),
+              backgroundColor: Colors.transparent,
+              shadowColor: Colors.transparent,
               actions: actions,
             )
           : null,
